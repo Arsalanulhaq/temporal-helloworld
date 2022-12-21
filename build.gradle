@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'io.temporal', name: 'temporal-sdk', version: '1.11.0'
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.11'
+    implementation group: 'commons-configuration', name: 'commons-configuration', version: '1.10'
+
+    implementation 'io.vertx:vertx-web-client:4.3.4'
+    implementation 'io.vertx:vertx-kafka-client:4.3.4'
+
+    testImplementation group: 'io.temporal', name: 'temporal-testing', version: '1.11.0'
+    testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: '4.5.1'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
